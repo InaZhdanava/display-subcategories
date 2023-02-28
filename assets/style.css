@@ -1,0 +1,54 @@
+.subcategories-block {
+	display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 20px 20px; 
+}
+.subcategories-block > div {
+	text-align: center;
+}
+h2 {
+	margin-top: 100px;
+}
+.category-img {
+	position: relative;
+	max-width: 200px;
+	margin: auto;
+	transition: all 0.3s;
+}
+.category-img img {
+	transition: all 0.3s;
+}
+.category-img .overflow {
+	transition: all 0.3s;
+	overflow: hidden;
+}
+.category-img:hover .overflow {
+	transform: rotate( 
+30deg) scale(1.0);
+}
+.category-img:hover img {
+	transform: rotate(0deg) scale(1.2);
+}
+
+.category-img:hover::after {
+	transform: rotate(30deg);
+  opacity: 1;
+}
+
+.category-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  z-index: 99;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(66, 66, 66, 0.3),
+    rgba(62, 224, 207, 0.5)
+  );
+  opacity: 0;
+  transition: all 0.3s;
+}
